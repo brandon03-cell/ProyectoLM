@@ -1,5 +1,5 @@
 const catsContainer = document.getElementById('catsContainer');
-const apiUrl = 'http://localhost:3000/cats';
+const apiUrl = 'https://mines-joyce-diamond-bless.trycloudflare.com/cats';
 
 // Fetches cat data from the local JSON Server
 async function fetchCats() {
