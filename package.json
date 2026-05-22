@@ -2,14 +2,10 @@
   "name": "proyectolm",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "main": "index.html",
   "dependencies": {
     "json-server": "^1.0.0-beta.15"
-  }
+  },
+  "author": "",
+  "license": "ISC"
 }
