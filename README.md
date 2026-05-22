@@ -12,9 +12,9 @@
 
 ## Capturas de pantalla
 
-![Vista general del catálogo](ENLACE_CLOUDINARY_CAPTURA_1)
+![Vista general del catálogo](https://res.cloudinary.com/do4k9fww6/image/upload/v1779481577/Captura_de_pantalla_20260522_222534_yv8w6v.png)
 
-![Vista de una card en detalle / diseño responsive](ENLACE_CLOUDINARY_CAPTURA_2)
+![Vista responsive en móvil](https://res.cloudinary.com/do4k9fww6/image/upload/v1779481525/IMG_8714_u0ggmb.png)
 
 ---
 
