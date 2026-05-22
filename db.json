@@ -14,7 +14,8 @@
       "breed": "Siamese Mix",
       "estimatedAge": "1 year",
       "personalityTrait": "Very vocal",
-      "imageUrl": "https://res.cloudinary.com/do4k9fww6/image/upload/v1779479166/gato2_a9umyh.jpg"
+      "imageUrl": "https://res.cloudinary.com/do4k9fww6/image/upload/v1779479166/gato2_a9umyh.jpg",
+      "status": "pending"
     },
     {
       "id": "3",
@@ -38,7 +39,8 @@
       "breed": "Bengal Mix",
       "estimatedAge": "6 months",
       "personalityTrait": "High energy",
-      "imageUrl": "https://res.cloudinary.com/do4k9fww6/image/upload/v1779479184/gato5_d3zinp.jpg"
+      "imageUrl": "https://res.cloudinary.com/do4k9fww6/image/upload/v1779479184/gato5_d3zinp.jpg",
+      "status": "pending"
     },
     {
       "id": "6",
@@ -62,7 +64,8 @@
       "breed": "Calico",
       "estimatedAge": "8 months",
       "personalityTrait": "Shy but sweet",
-      "imageUrl": "https://res.cloudinary.com/do4k9fww6/image/upload/v1779479239/gato8_t2xtgi.jpg"
+      "imageUrl": "https://res.cloudinary.com/do4k9fww6/image/upload/v1779479239/gato8_t2xtgi.jpg",
+      "status": "pending"
     },
     {
       "id": "9",

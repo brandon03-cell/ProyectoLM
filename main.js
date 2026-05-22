@@ -5,7 +5,8 @@ const apiUrl = 'https://mines-joyce-diamond-bless.trycloudflare.com/cats';
 
 let allCats = [];
 
-// function to fetch cats from the api
+const pendingIds = ['8', '9', '10'];
+
 async function fetchCats() {
     try {
         const response = await fetch(apiUrl);
@@ -21,7 +22,6 @@ async function fetchCats() {
     }
 }
 
-// this function renders the cards into the html
 function renderCats(cats) {
     catCount.textContent = cats.length + ' cats are waiting for a home 🐾';
 
@@ -37,7 +37,7 @@ function renderCats(cats) {
                     <div class="card-body d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-center mb-1">
                             <h5 class="card-title fw-bold mb-0">${cat.catName}</h5>
-                            <span class="badge-disponible">Available</span>
+                            <span class="${pendingIds.includes(cat.id) ? 'badge-pending' : 'badge-disponible'}">${pendingIds.includes(cat.id) ? 'Pending' : 'Available'}</span>
                         </div>
                         <h6 class="card-subtitle mb-3 text-muted">${cat.breed}</h6>
 
@@ -63,30 +63,26 @@ function renderCats(cats) {
     catsContainer.innerHTML = cardsHTML;
 }
 
-// when someone clicks the adopt button
 function adoptCat(name, button) {
     button.textContent = 'Request sent! ✓';
     button.disabled = true;
     button.classList.add('adopted');
 
-    // show the small message below the button
     const msg = button.nextElementSibling;
     msg.classList.add('visible');
 }
 
-// search filter
 searchInput.addEventListener('input', function() {
     const query = searchInput.value.toLowerCase();
     const filtered = allCats.filter(cat => cat.catName.toLowerCase().includes(query));
     renderCats(filtered);
 });
 
-// scroll to top button + navbar shadow (found this on mdn)
 window.onscroll = function() {
     const btn = document.getElementById('scrollTopBtn');
     const nav = document.querySelector('.custom-nav');
 
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    if (window.scrollY > 200) {
         btn.classList.add('visible');
         nav.classList.add('scrolled');
     } else {
