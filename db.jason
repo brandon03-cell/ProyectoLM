@@ -1,0 +1,84 @@
+{
+  "cats": [
+    {
+      "id": "1",
+      "catName": "Luna",
+      "breed": "Domestic Shorthair",
+      "estimatedAge": "2 months",
+      "personalityTrait": "Playful and curious",
+      "imageUrl": "https://res.cloudinary.com/TU_USUARIO/image/upload/v1/luna.jpg"
+    },
+    {
+      "id": "2",
+      "catName": "Oliver",
+      "breed": "Siamese Mix",
+      "estimatedAge": "1 year",
+      "personalityTrait": "Very vocal",
+      "imageUrl": "https://res.cloudinary.com/TU_USUARIO/image/upload/v1/oliver.jpg"
+    },
+    {
+      "id": "3",
+      "catName": "Milo",
+      "breed": "Maine Coon",
+      "estimatedAge": "3 years",
+      "personalityTrait": "Gentle giant",
+      "imageUrl": "https://res.cloudinary.com/TU_USUARIO/image/upload/v1/milo.jpg"
+    },
+    {
+      "id": "4",
+      "catName": "Bella",
+      "breed": "Persian",
+      "estimatedAge": "4 years",
+      "personalityTrait": "Calm and affectionate",
+      "imageUrl": "https://res.cloudinary.com/TU_USUARIO/image/upload/v1/bella.jpg"
+    },
+    {
+      "id": "5",
+      "catName": "Leo",
+      "breed": "Bengal Mix",
+      "estimatedAge": "6 months",
+      "personalityTrait": "High energy",
+      "imageUrl": "https://res.cloudinary.com/TU_USUARIO/image/upload/v1/leo.jpg"
+    },
+    {
+      "id": "6",
+      "catName": "Chloe",
+      "breed": "Ragdoll",
+      "estimatedAge": "2 years",
+      "personalityTrait": "Loves being held",
+      "imageUrl": "https://res.cloudinary.com/TU_USUARIO/image/upload/v1/chloe.jpg"
+    },
+    {
+      "id": "7",
+      "catName": "Max",
+      "breed": "Tuxedo",
+      "estimatedAge": "5 years",
+      "personalityTrait": "Independent",
+      "imageUrl": "https://res.cloudinary.com/TU_USUARIO/image/upload/v1/max.jpg"
+    },
+    {
+      "id": "8",
+      "catName": "Nala",
+      "breed": "Calico",
+      "estimatedAge": "8 months",
+      "personalityTrait": "Shy but sweet",
+      "imageUrl": "https://res.cloudinary.com/TU_USUARIO/image/upload/v1/nala.jpg"
+    },
+    {
+      "id": "9",
+      "catName": "Simba",
+      "breed": "Ginger Tabby",
+      "estimatedAge": "1.5 years",
+      "personalityTrait": "Food motivated",
+      "imageUrl": "https://res.cloudinary.com/TU_USUARIO/image/upload/v1/simba.jpg"
+    },
+    {
+      "id": "10",
+      "catName": "Cleo",
+      "breed": "Sphynx",
+      "estimatedAge": "3 years",
+      "personalityTrait": "Attention seeker",
+      "imageUrl": "https://res.cloudinary.com/TU_USUARIO/image/upload/v1/cleo.jpg"
+    }
+  ]
+}
