@@ -1,6 +1,9 @@
 const catsContainer = document.getElementById('catsContainer');
 const catCount = document.getElementById('catCount');
+const searchInput = document.getElementById('searchInput');
 const apiUrl = 'https://mines-joyce-diamond-bless.trycloudflare.com/cats';
+
+let allCats = [];
 
 // function to fetch cats from the api
 async function fetchCats() {
@@ -8,6 +11,7 @@ async function fetchCats() {
         const response = await fetch(apiUrl);
         const catsData = await response.json();
         console.log(catsData);
+        allCats = catsData;
         renderCats(catsData);
 
     } catch (error) {
@@ -70,13 +74,24 @@ function adoptCat(name, button) {
     msg.classList.add('visible');
 }
 
-// scroll to top button (found this on mdn)
+// search filter
+searchInput.addEventListener('input', function() {
+    const query = searchInput.value.toLowerCase();
+    const filtered = allCats.filter(cat => cat.catName.toLowerCase().includes(query));
+    renderCats(filtered);
+});
+
+// scroll to top button + navbar shadow (found this on mdn)
 window.onscroll = function() {
     const btn = document.getElementById('scrollTopBtn');
+    const nav = document.querySelector('.custom-nav');
+
     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
         btn.classList.add('visible');
+        nav.classList.add('scrolled');
     } else {
         btn.classList.remove('visible');
+        nav.classList.remove('scrolled');
     }
 };
 
