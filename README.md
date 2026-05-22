@@ -122,8 +122,8 @@ Abre [index.html](index.html) directamente en el navegador o usa la extensión *
 
 | Capa | Plataforma | URL de producción |
 |---|---|---|
-| Frontend | Vercel | *(añade tu URL de Vercel aquí)* |
-| Backend API | Docker + Cloudflare Tunnel | *(añade tu URL de Cloudflare aquí)* |
+| Frontend | Vercel | https://proyecto-lm-beta.vercel.app/ |
+| Backend API | Docker + Cloudflare Tunnel | https://mines-joyce-diamond-bless.trycloudflare.com/cats |
 
 El despliegue en Vercel se realiza de forma automática en cada `push` a la rama `main`.
 
