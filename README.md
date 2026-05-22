@@ -1,77 +1,77 @@
 # 🐱 Seville Purrfect Rescue
 
-> Catálogo web de adopción de gatos desarrollado como proyecto final de **Lenguaje de Marcas** (1º DAW).
+> Cat adoption web catalogue built as the final project for **Markup Language** (1st year DAW).
 
 ---
 
-## Descripción
+## Description
 
-**Seville Purrfect Rescue** es una aplicación web de página única (SPA) que muestra un catálogo dinámico de gatos disponibles para adopción en Sevilla. El proyecto implementa una arquitectura cliente-servidor completamente desacoplada: el frontend consume datos desde una API REST remota y los renderiza de forma dinámica sin recargar la página.
-
----
-
-## Capturas de pantalla
-
-![Vista general del catálogo](https://res.cloudinary.com/do4k9fww6/image/upload/v1779481577/Captura_de_pantalla_20260522_222534_yv8w6v.png)
-
-![Vista responsive en móvil](https://res.cloudinary.com/do4k9fww6/image/upload/v1779481525/IMG_8714_u0ggmb.png)
+**Seville Purrfect Rescue** is a single-page web application (SPA) that displays a dynamic catalogue of cats available for adoption in Seville. The project uses a fully decoupled client-server architecture: the frontend fetches data from a remote REST API and renders it dynamically without reloading the page.
 
 ---
 
-## Tecnologías utilizadas
+## Screenshots
+
+![General catalogue view](https://res.cloudinary.com/do4k9fww6/image/upload/v1779481577/Captura_de_pantalla_20260522_222534_yv8w6v.png)
+
+![Responsive mobile view](https://res.cloudinary.com/do4k9fww6/image/upload/v1779481525/IMG_8714_u0ggmb.png)
+
+---
+
+## Technologies used
 
 ### Frontend
-| Tecnología | Uso |
+| Technology | Purpose |
 |---|---|
-| HTML5 semántico | Estructura del documento |
-| CSS3 + Variables CSS | Estilos globales y sistema de diseño |
-| JavaScript ES2020+ | Lógica de cliente, fetch y renderizado |
-| Bootstrap 5 | Sistema de grid y componentes de cards |
-| Vercel | Despliegue del frontend |
+| Semantic HTML5 | Document structure |
+| CSS3 | Global styles and design |
+| JavaScript ES2020+ | Client logic, fetch and rendering |
+| Bootstrap 5 | Grid system and card components |
+| Vercel | Frontend deployment |
 
 ### Backend
-| Tecnología | Uso |
+| Technology | Purpose |
 |---|---|
-| JSON Server | API REST simulada a partir de `db.json` |
-| Docker | Contenerización del servidor |
-| Cloudflare Tunnel | Exposición pública del contenedor remoto |
+| JSON Server | Simulated REST API from `db.json` |
+| Docker | Server containerisation |
+| Cloudflare Tunnel | Public exposure of the remote container |
 
 ---
 
-## Arquitectura del proyecto
+## Project architecture
 
 ```
 Seville Purrfect Rescue
 │
 ├── Frontend (Vercel)
-│   ├── index.html          # Estructura semántica de la página
-│   ├── style.css           # Variables CSS y estilos globales
-│   └── main.js             # Fetch, renderizado dinámico y lógica UI
+│   ├── index.html          # Page semantic structure
+│   ├── style.css           # Global styles
+│   └── main.js             # Fetch, dynamic rendering and UI logic
 │
 └── Backend (Docker + Cloudflare)
-    └── db.json             # Base de datos JSON con el catálogo de gatos
+    └── db.json             # JSON database with the cat catalogue
 ```
 
-**Flujo de datos:**
-1. El navegador carga el frontend desde Vercel.
-2. `main.js` realiza una petición `GET` a la API (JSON Server en Docker).
-3. La API, expuesta públicamente mediante Cloudflare Tunnel, devuelve el array de gatos.
-4. El frontend renderiza dinámicamente las cards con Bootstrap 5.
+**Data flow:**
+1. The browser loads the frontend from Vercel.
+2. `main.js` makes a `GET` request to the API (JSON Server in Docker).
+3. The API, publicly exposed via Cloudflare Tunnel, returns the cats array.
+4. The frontend dynamically renders the cards with Bootstrap 5.
 
 ---
 
-## Estructura del objeto JSON
+## JSON object structure
 
-Cada gato del catálogo cumple el mínimo de **5 propiedades**:
+Each cat in the catalogue has at least **5 properties**:
 
 ```json
 {
   "id": 1,
   "name": "Mochi",
-  "breed": "Europeo Común",
-  "age": "2 años",
-  "gender": "Macho",
-  "description": "Juguetón y muy cariñoso. Lleva 3 meses en acogida.",
+  "breed": "European Shorthair",
+  "age": "2 years",
+  "gender": "Male",
+  "description": "Playful and very affectionate. Has been in foster care for 3 months.",
   "vaccinated": true,
   "imageUrl": "https://res.cloudinary.com/..."
 }
@@ -79,20 +79,20 @@ Cada gato del catálogo cumple el mínimo de **5 propiedades**:
 
 ---
 
-## Instalación y uso local
+## Installation and local usage
 
-### Prerrequisitos
+### Prerequisites
 - [Node.js](https://nodejs.org/) ≥ 18
-- [Docker](https://www.docker.com/) (para levantar la API localmente)
+- [Docker](https://www.docker.com/) (to run the API locally)
 
-### 1. Clonar el repositorio
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/TU_USUARIO/seville-purrfect-rescue.git
 cd seville-purrfect-rescue
 ```
 
-### 2. Levantar el backend con Docker
+### 2. Start the backend with Docker
 
 ```bash
 docker run -d \
@@ -102,64 +102,64 @@ docker run -d \
   --watch /data/db.json
 ```
 
-La API quedará disponible en `http://localhost:3000/cats`.
+The API will be available at `http://localhost:3000/cats`.
 
-### 3. Configurar el endpoint en el frontend
+### 3. Configure the endpoint in the frontend
 
-En [main.js](main.js), ajusta la constante `API_URL` si quieres apuntar a tu instancia local:
+In [main.js](main.js), update the `apiUrl` constant to point to your local instance:
 
 ```js
-const API_URL = "http://localhost:3000/cats";
+const apiUrl = "http://localhost:3000/cats";
 ```
 
-### 4. Abrir el frontend
+### 4. Open the frontend
 
-Abre [index.html](index.html) directamente en el navegador o usa la extensión **Live Server** de VS Code.
+Open [index.html](index.html) directly in the browser or use the **Live Server** extension in VS Code.
 
 ---
 
-## Despliegue en producción
+## Production deployment
 
-| Capa | Plataforma | URL de producción |
+| Layer | Platform | Production URL |
 |---|---|---|
 | Frontend | Vercel | https://proyecto-lm-beta.vercel.app/ |
 | Backend API | Docker + Cloudflare Tunnel | https://mines-joyce-diamond-bless.trycloudflare.com/cats |
 
-El despliegue en Vercel se realiza de forma automática en cada `push` a la rama `main`.
+Vercel automatically deploys on every `push` to the `main` branch.
 
 ---
 
-## ✅ Requisitos Cumplidos (Rúbrica)
+## ✅ Requirements met (Rubric)
 
-Lista de verificación de los criterios de evaluación del proyecto final de Lenguaje de Marcas:
+Checklist of the assessment criteria for the Markup Language final project:
 
-### Contenido y datos
-- [x] **Mínimo 10 cards** — El catálogo incluye al menos 10 gatos, cada uno renderizado en su propia card de Bootstrap.
-- [x] **Mínimo 5 propiedades por objeto** — Cada objeto del `db.json` tiene 8 propiedades (`id`, `name`, `breed`, `age`, `gender`, `description`, `vaccinated`, `imageUrl`).
+### Content and data
+- [x] **Minimum 10 cards** — The catalogue includes at least 10 cats, each rendered in its own Bootstrap card.
+- [x] **Minimum 5 properties per object** — Each object in `db.json` has 8 properties (`id`, `name`, `breed`, `age`, `gender`, `description`, `vaccinated`, `imageUrl`).
 
 ### JavaScript
-- [x] **Código JS 100% en inglés** — Todas las variables, funciones, constantes y comentarios del código están escritos en inglés.
-- [x] **Nomenclatura camelCase** — Se utiliza camelCase de forma consistente en todo `main.js` (`fetchCats`, `renderCard`, `apiUrl`, etc.).
-- [x] **Uso de `async`/`await` y `fetch`** — La comunicación con la API se realiza de forma asíncrona sin callbacks ni `.then()` anidados.
-- [x] **Renderizado dinámico del DOM** — Las cards se generan programáticamente desde JavaScript; el HTML no contiene cards codificadas a mano.
+- [x] **JS code 100% in English** — All variables, functions, constants and comments are written in English.
+- [x] **camelCase naming** — camelCase is used consistently throughout `main.js` (`fetchCats`, `renderCats`, `adoptCat`, `apiUrl`, etc.).
+- [x] **Use of `async`/`await` and `fetch`** — API communication is done asynchronously without callbacks or nested `.then()`.
+- [x] **Dynamic DOM rendering** — Cards are generated programmatically from JavaScript; the HTML contains no hardcoded cards.
 
-### Estilos y maquetación
-- [x] **Bootstrap 5 obligatorio** — El sistema de grid (`row`/`col`) y el componente `card` de Bootstrap estructuran todo el catálogo.
-- [x] **Cero CSS inline** — No existe ningún atributo `style=""` en el HTML ni se usa `element.style` en JavaScript para aplicar estilos.
-- [x] **Variables CSS** — El diseño utiliza custom properties (`:root { --color-primary: ...; }`) para colores, tipografías y espaciados, garantizando coherencia visual.
+### Styles and layout
+- [x] **Bootstrap 5 required** — The grid system (`row`/`col`) and Bootstrap's `card` component structure the whole catalogue.
+- [x] **Zero inline CSS** — No `style=""` attributes in HTML and no `element.style` used in JavaScript to apply styles.
+- [x] **CSS classes for state changes** — Dynamic states (adopted button, visible message, scroll button) are handled via CSS classes, not inline styles.
 
-### Recursos e infraestructura
-- [x] **Imágenes exclusivamente en Cloudinary** — Todas las imágenes de los gatos están alojadas en Cloudinary y se referencian mediante su URL CDN.
-- [x] **Despliegue en producción** — El frontend está publicado en Vercel y el backend en un contenedor Docker expuesto con Cloudflare Tunnel.
-- [x] **Control de versiones con Git** — El proyecto está gestionado con Git y publicado en GitHub, con historial de commits desde el inicio del desarrollo.
-
----
-
-## Autor
-
-**Brandon** — 1º DAW · Lenguaje de Marcas  
-Proyecto final · Curso 2025-2026
+### Resources and infrastructure
+- [x] **Images hosted on Cloudinary** — All cat images are hosted on Cloudinary and referenced via their CDN URL.
+- [x] **Production deployment** — The frontend is published on Vercel and the backend runs in a Docker container exposed with Cloudflare Tunnel.
+- [x] **Version control with Git** — The project is managed with Git and published on GitHub, with a commit history from the start of development.
 
 ---
 
-*Desarrollado con fines académicos.*
+## Author
+
+**Brandon** — 1st year DAW · Markup Language  
+Final project · 2025-2026
+
+---
+
+*Developed for academic purposes.*

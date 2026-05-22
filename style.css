@@ -1,11 +1,11 @@
-/* estilos generales */
+/* general styles */
 body {
     font-family: 'Quicksand', sans-serif;
     background-color: #f4f7f6;
     color: #2c3e50;
 }
 
-/* cabecera con gradiente naranja */
+/* header with orange gradient */
 .custom-header {
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
     color: white;
@@ -19,9 +19,10 @@ body {
     border-radius: 16px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: aparecer 0.4s ease;
 }
 
-/* efecto hover de la tarjeta */
+/* card hover effect */
 .cat-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 25px rgba(0,0,0,0.15) !important;
@@ -43,7 +44,7 @@ body {
     transform: scale(1.08);
 }
 
-/* boton de adoptar */
+/* adopt button */
 .adopt-btn {
     background: linear-gradient(to right, #ff7e5f, #feb47b);
     border: none;
@@ -57,4 +58,123 @@ body {
     opacity: 0.9;
     transform: scale(1.03);
     color: white;
+}
+
+/* navbar */
+.custom-nav {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-logo {
+    font-weight: 700;
+    color: #ff7e5f !important;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+.nav-enlace {
+    color: #2c3e50 !important;
+    font-weight: 600;
+    margin-left: 10px;
+    transition: color 0.2s;
+}
+
+.nav-enlace:hover {
+    color: #ff7e5f !important;
+}
+
+/* cat counter text */
+.cat-count-text {
+    color: #888;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* available badge on cards */
+.badge-disponible {
+    background-color: #28a745;
+    color: white;
+    font-size: 0.72rem;
+    padding: 3px 9px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+/* footer */
+.custom-footer {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    margin-top: 50px;
+}
+
+.footer-link {
+    color: white;
+    font-weight: 700;
+}
+
+.footer-link:hover {
+    color: #2c3e50;
+}
+
+/* scroll to top button, found this on mdn */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #ff7e5f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.2s, transform 0.2s;
+    z-index: 99;
+}
+
+#scrollTopBtn:hover {
+    background-color: #e5664a;
+    transform: scale(1.1);
+}
+
+/* animation for when the cards appear */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* message shown after clicking adopt */
+.adopt-msg {
+    display: none;
+    color: #28a745;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.adopt-msg.visible {
+    display: block;
+}
+
+/* adopted state for the button */
+.adopt-btn.adopted {
+    background-image: none;
+    background-color: #28a745;
+}
+
+/* scroll button visible state */
+#scrollTopBtn.visible {
+    display: block;
 }
